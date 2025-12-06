@@ -44,10 +44,22 @@
         .legend-items { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 8px; }
         .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.85em; }
         .legend-color { width: 40px; height: 18px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.1); }
+        .controls-section { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 1px solid #dee2e6; text-align: center; }
+        .controls-section label { font-size: 1.1em; font-weight: 600; margin-right: 10px; }
+        .controls-section select { padding: 8px 15px; font-size: 1em; border: 2px solid #000080; border-radius: 6px; background: white; cursor: pointer; font-weight: 500; }
+        .controls-section select:focus { outline: none; border-color: #000066; }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="controls-section">
+            <label for="profitPeriodSelect">Select Profit Period:</label>
+            <select id="profitPeriodSelect">
+                <option value="3">3 Year Profit</option>
+                <option value="4">4 Year Profit</option>
+                <option value="5" selected>5 Year Profit</option>
+            </select>
+        </div>
         <div class="categories-grid" id="categoriesContainer"></div>
         <div class="selected-section" id="selectedSection">
             <div class="selected-header">
@@ -57,7 +69,7 @@
             </div>
             <div class="basket-table" id="basketTable" style="display:none;">
                 <h3>Sector Basket</h3>
-                <table class="basket-data-table"><thead><tr><th>Indices</th><th>values</th><th>%</th><th>Up</th><th>risk</th><th>Low</th><th>High</th><th>Del</th></tr></thead><tbody id="basketTableBody"></tbody></table>
+                <table class="basket-data-table"><thead><tr><th>Indices</th><th>Percentile</th><th>1yr %</th><th>Up</th><th id="profitHeader">5yr Profit</th><th>Low</th><th>High</th><th>Del</th></tr></thead><tbody id="basketTableBody"></tbody></table>
             </div>
             <div class="correlation-table" id="correlationTable">
                 <h3>Correlation</h3>
@@ -79,6 +91,7 @@
         let selectedIndices = [];
         let basketData = {};
         let correlationMatrix = {};
+        let currentProfitPeriod = 5; // Default to 5-year
 
         async function loadData() {
             try {
@@ -118,6 +131,15 @@
                 correlationMatrix = await corrResponse.json();
 
                 displayData();
+                
+                // Add event listener for profit period dropdown
+                document.getElementById('profitPeriodSelect').addEventListener('change', function(e) {
+                    currentProfitPeriod = parseInt(e.target.value);
+                    displayData();
+                    if (selectedIndices.length > 0) {
+                        updateBasket();
+                    }
+                });
             } catch (error) {
                 console.error('Error loading data:', error);
             }
@@ -131,16 +153,20 @@
             return 'very-high';
         }
 
-        function toggleSelection(shortName, fullName, percentile5yr, profit5yr, percentile4yr, profit4yr, percentile3yr, profit3yr) {
+        function toggleSelection(shortName, fullName, data) {
             const index = selectedIndices.findIndex(item => item.shortName === shortName);
             if (index > -1) {
                 selectedIndices.splice(index, 1);
             } else {
                 selectedIndices.push({ 
-                    shortName, fullName, 
-                    percentile_5yr: percentile5yr, profit_5yr: profit5yr,
-                    percentile_4yr: percentile4yr, profit_4yr: profit4yr,
-                    percentile_3yr: percentile3yr, profit_3yr: profit3yr
+                    shortName, 
+                    fullName, 
+                    percentile_3yr: data.percentile_3yr,
+                    profit_3yr: data.profit_3yr,
+                    percentile_4yr: data.percentile_4yr,
+                    profit_4yr: data.profit_4yr,
+                    percentile_5yr: data.percentile_5yr,
+                    profit_5yr: data.profit_5yr
                 });
             }
             updateSelected();
@@ -163,7 +189,7 @@
                     
                     const removeBtn = tag.querySelector('.remove-tag');
                     removeBtn.addEventListener('click', function() {
-                        toggleSelection(item.shortName, item.fullName, item.percentile_5yr, item.profit_5yr, item.percentile_4yr, item.profit_4yr, item.percentile_3yr, item.profit_3yr);
+                        toggleSelection(item.shortName, item.fullName, item);
                     });
                     
                     list.appendChild(tag);
@@ -180,10 +206,20 @@
         function updateBasket() {
             const tbody = document.getElementById('basketTableBody');
             tbody.innerHTML = '';
+            
+            // Update profit header based on selected period
+            const profitHeader = document.getElementById('profitHeader');
+            if (profitHeader) {
+                profitHeader.textContent = `${currentProfitPeriod}yr Profit`;
+            }
 
             selectedIndices.forEach(item => {
                 const row = document.createElement('tr');
-                const colorClass = getColorClass(item.percentile_5yr);
+                
+                // Get percentile and profit based on selected period
+                const currentPercentile = item[`percentile_${currentProfitPeriod}yr`];
+                const currentProfit = item[`profit_${currentProfitPeriod}yr`];
+                const colorClass = getColorClass(currentPercentile);
                 
                 // Get real data from basketData
                 const realData = basketData[item.shortName];
@@ -195,10 +231,10 @@
 
                 row.innerHTML = `
                     <td style="font-weight:600;">${item.shortName}</td>
-                    <td><div class="value-cell ${colorClass}" style="display:inline-block;padding:4px 12px;">${item.percentile_5yr.toFixed(2)}</div></td>
+                    <td><div class="value-cell ${colorClass}" style="display:inline-block;padding:4px 12px;">${currentPercentile.toFixed(2)}</div></td>
                     <td>${realData.pct_change_1yr}%</td>
                     <td>${realData.upside_from_low}%</td>
-                    <td><div class="value-cell ${colorClass}" style="display:inline-block;padding:4px 12px;">${item.percentile_4yr.toFixed(2)}</div></td>
+                    <td style="font-weight:600;">${currentProfit.toFixed(2)}%</td>
                     <td>${realData.low_pct}%</td>
                     <td>${realData.high_pct}%</td>
                     <td><button class="delete-btn">-</button></td>
@@ -207,7 +243,7 @@
                 const deleteBtn = row.querySelector('.delete-btn');
                 deleteBtn.style.cssText = 'background:#dc3545;color:white;border:none;padding:4px 8px;border-radius:4px;cursor:pointer;';
                 deleteBtn.addEventListener('click', function() {
-                    toggleSelection(item.shortName, item.fullName, item.percentile_5yr, item.profit_5yr, item.percentile_4yr, item.profit_4yr, item.percentile_3yr, item.profit_3yr);
+                    toggleSelection(item.shortName, item.fullName, item);
                 });
 
                 tbody.appendChild(row);
@@ -245,11 +281,11 @@
                 sortHeader.addEventListener('click', function() {
                     sortAscending = !sortAscending;
                     
-                    // Sort the data by 5-year percentile
+                    // Sort the data by current period percentile
                     const sortedData = [...allData[category]].sort((a, b) => {
-                        return sortAscending ? 
-                            a.percentile_5yr - b.percentile_5yr : 
-                            b.percentile_5yr - a.percentile_5yr;
+                        const aPercentile = a[`percentile_${currentProfitPeriod}yr`];
+                        const bPercentile = b[`percentile_${currentProfitPeriod}yr`];
+                        return sortAscending ? aPercentile - bPercentile : bPercentile - aPercentile;
                     });
                     
                     // Update arrow indicator
@@ -259,7 +295,9 @@
                     tbody.innerHTML = '';
                     sortedData.forEach(index => {
                         const row = document.createElement('tr');
-                        const colorClass = getColorClass(index.percentile_5yr);
+                        const currentPercentile = index[`percentile_${currentProfitPeriod}yr`];
+                        const currentProfit = index[`profit_${currentProfitPeriod}yr`];
+                        const colorClass = getColorClass(currentPercentile);
                         const isSelected = selectedIndices.some(item => item.shortName === index.shortName);
 
                         if (isSelected) {
@@ -268,13 +306,13 @@
 
                         row.innerHTML = `
                             <td class="index-code">${index.shortName}</td>
-                            <td><div class="value-cell ${colorClass}">${index.percentile_5yr.toFixed(2)}</div></td>
+                            <td><div class="value-cell ${colorClass}">${currentPercentile.toFixed(2)}</div></td>
                         `;
 
-                        row.title = `${index.fullName}\n5-Year: ${index.profit_5yr > 0 ? '+' : ''}${index.profit_5yr.toFixed(1)}% (Percentile: ${index.percentile_5yr.toFixed(3)})\n4-Year: ${index.profit_4yr > 0 ? '+' : ''}${index.profit_4yr.toFixed(1)}% (Percentile: ${index.percentile_4yr.toFixed(3)})\n3-Year: ${index.profit_3yr > 0 ? '+' : ''}${index.profit_3yr.toFixed(1)}% (Percentile: ${index.percentile_3yr.toFixed(3)})`;
+                        row.title = `${index.fullName}\n${currentProfitPeriod}-Year Profit: ${currentProfit > 0 ? '+' : ''}${currentProfit.toFixed(2)}%\nPercentile Rank: ${currentPercentile.toFixed(3)}`;
 
                         row.addEventListener('click', function() {
-                            toggleSelection(index.shortName, index.fullName, index.percentile_5yr, index.profit_5yr, index.percentile_4yr, index.profit_4yr, index.percentile_3yr, index.profit_3yr);
+                            toggleSelection(index.shortName, index.fullName, index);
                         });
 
                         tbody.appendChild(row);
@@ -283,7 +321,9 @@
 
                 allData[category].forEach(index => {
                     const row = document.createElement('tr');
-                    const colorClass = getColorClass(index.percentile_5yr);
+                    const currentPercentile = index[`percentile_${currentProfitPeriod}yr`];
+                    const currentProfit = index[`profit_${currentProfitPeriod}yr`];
+                    const colorClass = getColorClass(currentPercentile);
                     const isSelected = selectedIndices.some(item => item.shortName === index.shortName);
 
                     if (isSelected) {
@@ -292,13 +332,13 @@
 
                     row.innerHTML = `
                         <td class="index-code">${index.shortName}</td>
-                        <td><div class="value-cell ${colorClass}">${index.percentile_5yr.toFixed(2)}</div></td>
+                        <td><div class="value-cell ${colorClass}">${currentPercentile.toFixed(2)}</div></td>
                     `;
 
-                    row.title = `${index.fullName}\n5-Year: ${index.profit_5yr > 0 ? '+' : ''}${index.profit_5yr.toFixed(1)}% (Percentile: ${index.percentile_5yr.toFixed(3)})\n4-Year: ${index.profit_4yr > 0 ? '+' : ''}${index.profit_4yr.toFixed(1)}% (Percentile: ${index.percentile_4yr.toFixed(3)})\n3-Year: ${index.profit_3yr > 0 ? '+' : ''}${index.profit_3yr.toFixed(1)}% (Percentile: ${index.percentile_3yr.toFixed(3)})`;
+                    row.title = `${index.fullName}\n${currentProfitPeriod}-Year Profit: ${currentProfit > 0 ? '+' : ''}${currentProfit.toFixed(2)}%\nPercentile Rank: ${currentPercentile.toFixed(3)}`;
 
                     row.addEventListener('click', function() {
-                        toggleSelection(index.shortName, index.fullName, index.percentile_5yr, index.profit_5yr, index.percentile_4yr, index.profit_4yr, index.percentile_3yr, index.profit_3yr);
+                        toggleSelection(index.shortName, index.fullName, index);
                     });
 
                     tbody.appendChild(row);
