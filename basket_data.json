@@ -1,0 +1,1162 @@
+{
+  "NN50": {
+    "full_name": "NIFTY NEXT 50",
+    "pct_change_1yr": 20.5,
+    "upside_from_low": 20.5,
+    "low_pct": -1.57,
+    "high_pct": 20.5,
+    "percentile_3yr": 0.825,
+    "percentile_4yr": 0.583,
+    "percentile_5yr": 0.496
+  },
+  "NMC100": {
+    "full_name": "NIFTY Midcap 100",
+    "pct_change_1yr": 25.18,
+    "upside_from_low": 25.18,
+    "low_pct": -0.72,
+    "high_pct": 25.18,
+    "percentile_3yr": 0.738,
+    "percentile_4yr": 0.765,
+    "percentile_5yr": 0.826
+  },
+  "NMIDSEL": {
+    "full_name": "Nifty Midcap Select",
+    "pct_change_1yr": 24.6,
+    "upside_from_low": 25.34,
+    "low_pct": -1.01,
+    "high_pct": 25.34,
+    "percentile_3yr": 0.722,
+    "percentile_4yr": 0.748,
+    "percentile_5yr": 0.678
+  },
+  "NMC50": {
+    "full_name": "NIFTY MIDCAP 50",
+    "pct_change_1yr": 25.82,
+    "upside_from_low": 25.82,
+    "low_pct": -0.58,
+    "high_pct": 25.82,
+    "percentile_3yr": 0.69,
+    "percentile_4yr": 0.8,
+    "percentile_5yr": 0.852
+  },
+  "NSC50": {
+    "full_name": "NIFTY SMALLCAP 50",
+    "pct_change_1yr": 22.86,
+    "upside_from_low": 22.86,
+    "low_pct": -5.23,
+    "high_pct": 22.86,
+    "percentile_3yr": 0.675,
+    "percentile_4yr": 0.852,
+    "percentile_5yr": 0.809
+  },
+  "NMC150": {
+    "full_name": "NIFTY MIDCAP 150",
+    "pct_change_1yr": 24.24,
+    "upside_from_low": 24.24,
+    "low_pct": -0.83,
+    "high_pct": 24.24,
+    "percentile_3yr": 0.635,
+    "percentile_4yr": 0.739,
+    "percentile_5yr": 0.791
+  },
+  "NMSC400": {
+    "full_name": "NIFTY MIDSMALLCAP 400",
+    "pct_change_1yr": 23.74,
+    "upside_from_low": 23.74,
+    "low_pct": -1.71,
+    "high_pct": 23.74,
+    "percentile_3yr": 0.587,
+    "percentile_4yr": 0.713,
+    "percentile_5yr": 0.757
+  },
+  "NMICRO": {
+    "full_name": "NIFTY MICROCAP 250",
+    "pct_change_1yr": 20.4,
+    "upside_from_low": 20.86,
+    "low_pct": -4.62,
+    "high_pct": 20.86,
+    "percentile_3yr": 0.548,
+    "percentile_4yr": 0.904,
+    "percentile_5yr": 0.904
+  },
+  "NLMC250": {
+    "full_name": "NIFTY LargeMidcap 250",
+    "pct_change_1yr": 20.72,
+    "upside_from_low": 20.72,
+    "low_pct": -1.34,
+    "high_pct": 20.72,
+    "percentile_3yr": 0.54,
+    "percentile_4yr": 0.478,
+    "percentile_5yr": 0.557
+  },
+  "NSC100": {
+    "full_name": "NIFTY SMALLCAP 100",
+    "pct_change_1yr": 23.05,
+    "upside_from_low": 23.05,
+    "low_pct": -5.24,
+    "high_pct": 23.05,
+    "percentile_3yr": 0.516,
+    "percentile_4yr": 0.757,
+    "percentile_5yr": 0.687
+  },
+  "N500EQ": {
+    "full_name": "NIFTY500 EQUAL WEIGHT",
+    "pct_change_1yr": 22.81,
+    "upside_from_low": 22.81,
+    "low_pct": -2.3,
+    "high_pct": 22.81,
+    "percentile_3yr": 0.484,
+    "percentile_4yr": 0.626,
+    "percentile_5yr": 0.643
+  },
+  "NMC5025": {
+    "full_name": "NIFTY500 MULTICAP 50:25:25",
+    "pct_change_1yr": 20.38,
+    "upside_from_low": 20.38,
+    "low_pct": -1.74,
+    "high_pct": 20.38,
+    "percentile_3yr": 0.452,
+    "percentile_4yr": 0.47,
+    "percentile_5yr": 0.522
+  },
+  "NTOTLM": {
+    "full_name": "Nifty Total Market",
+    "pct_change_1yr": 19.45,
+    "upside_from_low": 19.45,
+    "low_pct": -1.46,
+    "high_pct": 19.45,
+    "percentile_3yr": 0.413,
+    "percentile_4yr": 0.348,
+    "percentile_5yr": 0.417
+  },
+  "N200": {
+    "full_name": "NIFTY 200",
+    "pct_change_1yr": 18.57,
+    "upside_from_low": 18.57,
+    "low_pct": -1.71,
+    "high_pct": 18.57,
+    "percentile_3yr": 0.389,
+    "percentile_4yr": 0.287,
+    "percentile_5yr": 0.304
+  },
+  "NSC250": {
+    "full_name": "NIFTY SMALLCAP 250",
+    "pct_change_1yr": 22.85,
+    "upside_from_low": 22.85,
+    "low_pct": -5.32,
+    "high_pct": 22.85,
+    "percentile_3yr": 0.381,
+    "percentile_4yr": 0.687,
+    "percentile_5yr": 0.67
+  },
+  "N500": {
+    "full_name": "NIFTY 500",
+    "pct_change_1yr": 19.03,
+    "upside_from_low": 19.03,
+    "low_pct": -1.77,
+    "high_pct": 19.03,
+    "percentile_3yr": 0.373,
+    "percentile_4yr": 0.33,
+    "percentile_5yr": 0.391
+  },
+  "N100": {
+    "full_name": "NIFTY 100",
+    "pct_change_1yr": 17.26,
+    "upside_from_low": 17.26,
+    "low_pct": -1.98,
+    "high_pct": 17.26,
+    "percentile_3yr": 0.31,
+    "percentile_4yr": 0.209,
+    "percentile_5yr": 0.243
+  },
+  "N50": {
+    "full_name": "NIFTY 50",
+    "pct_change_1yr": 16.58,
+    "upside_from_low": 16.58,
+    "low_pct": -2.12,
+    "high_pct": 16.58,
+    "percentile_3yr": 0.246,
+    "percentile_4yr": 0.165,
+    "percentile_5yr": 0.183
+  },
+  "NMSFINS": {
+    "full_name": "Nifty MidSmall Financial Services",
+    "pct_change_1yr": 48.19,
+    "upside_from_low": 50.76,
+    "low_pct": 0.0,
+    "high_pct": 50.76,
+    "percentile_3yr": 0.952,
+    "percentile_4yr": 0.974,
+    "percentile_5yr": 0.965
+  },
+  "NPSUBANK": {
+    "full_name": "NIFTY PSU BANK",
+    "pct_change_1yr": 47.02,
+    "upside_from_low": 47.02,
+    "low_pct": 0.0,
+    "high_pct": 47.02,
+    "percentile_3yr": 0.897,
+    "percentile_4yr": 0.896,
+    "percentile_5yr": 0.983
+  },
+  "NMSHC": {
+    "full_name": "Nifty MidSmall Healthcare",
+    "pct_change_1yr": 17.04,
+    "upside_from_low": 17.04,
+    "low_pct": -3.98,
+    "high_pct": 17.04,
+    "percentile_3yr": 0.889,
+    "percentile_4yr": 0.939,
+    "percentile_5yr": 0.843
+  },
+  "NAUTO": {
+    "full_name": "NIFTY AUTO",
+    "pct_change_1yr": 33.29,
+    "upside_from_low": 36.29,
+    "low_pct": -2.01,
+    "high_pct": 36.29,
+    "percentile_3yr": 0.881,
+    "percentile_4yr": 0.843,
+    "percentile_5yr": 0.896
+  },
+  "NREALTY": {
+    "full_name": "NIFTY REALTY",
+    "pct_change_1yr": 17.4,
+    "upside_from_low": 22.32,
+    "low_pct": -8.68,
+    "high_pct": 22.32,
+    "percentile_3yr": 0.841,
+    "percentile_4yr": 0.948,
+    "percentile_5yr": 0.878
+  },
+  "NHEALTH": {
+    "full_name": "Nifty HEALTHCARE",
+    "pct_change_1yr": 15.5,
+    "upside_from_low": 15.5,
+    "low_pct": -2.58,
+    "high_pct": 15.5,
+    "percentile_3yr": 0.817,
+    "percentile_4yr": 0.73,
+    "percentile_5yr": 0.609
+  },
+  "NFINSEXB": {
+    "full_name": "Nifty Financial Services Ex Bank",
+    "pct_change_1yr": 31.83,
+    "upside_from_low": 31.83,
+    "low_pct": 0.0,
+    "high_pct": 31.83,
+    "percentile_3yr": 0.802,
+    "percentile_4yr": 0.809,
+    "percentile_5yr": 0.774
+  },
+  "NOILGAS": {
+    "full_name": "NIFTY OIL AND GAS INDEX",
+    "pct_change_1yr": 26.09,
+    "upside_from_low": 26.09,
+    "low_pct": -0.66,
+    "high_pct": 26.09,
+    "percentile_3yr": 0.794,
+    "percentile_4yr": 0.443,
+    "percentile_5yr": 0.157
+  },
+  "NMETAL": {
+    "full_name": "NIFTY METAL",
+    "pct_change_1yr": 25.61,
+    "upside_from_low": 33.63,
+    "low_pct": -3.25,
+    "high_pct": 33.63,
+    "percentile_3yr": 0.786,
+    "percentile_4yr": 0.591,
+    "percentile_5yr": 0.696
+  },
+  "NPHARMA": {
+    "full_name": "NIFTY PHARMA",
+    "pct_change_1yr": 12.39,
+    "upside_from_low": 12.39,
+    "low_pct": -3.86,
+    "high_pct": 12.39,
+    "percentile_3yr": 0.698,
+    "percentile_4yr": 0.617,
+    "percentile_5yr": 0.478
+  },
+  "NFINS25": {
+    "full_name": "NIFTY FINANCIAL SERVICES 25/50",
+    "pct_change_1yr": 22.09,
+    "upside_from_low": 22.09,
+    "low_pct": -0.51,
+    "high_pct": 22.09,
+    "percentile_3yr": 0.643,
+    "percentile_4yr": 0.487,
+    "percentile_5yr": 0.574
+  },
+  "NFINSERV": {
+    "full_name": "NIFTY FINANCIAL SERVICES",
+    "pct_change_1yr": 19.39,
+    "upside_from_low": 19.39,
+    "low_pct": -1.25,
+    "high_pct": 19.39,
+    "percentile_3yr": 0.468,
+    "percentile_4yr": 0.2,
+    "percentile_5yr": 0.348
+  },
+  "NBANK": {
+    "full_name": "NIFTY BANK",
+    "pct_change_1yr": 20.92,
+    "upside_from_low": 21.91,
+    "low_pct": -0.87,
+    "high_pct": 21.91,
+    "percentile_3yr": 0.254,
+    "percentile_4yr": 0.096,
+    "percentile_5yr": 0.287
+  },
+  "NCONDUR": {
+    "full_name": "NIFTY CONSUMER DURABLES",
+    "pct_change_1yr": 8.17,
+    "upside_from_low": 10.99,
+    "low_pct": -5.52,
+    "high_pct": 10.99,
+    "percentile_3yr": 0.198,
+    "percentile_4yr": 0.243,
+    "percentile_5yr": 0.122
+  },
+  "NCHEM": {
+    "full_name": "NIFTY CHEMICALS",
+    "pct_change_1yr": 15.32,
+    "upside_from_low": 15.32,
+    "low_pct": -8.13,
+    "high_pct": 15.32,
+    "percentile_3yr": 0.127,
+    "percentile_4yr": 0.052,
+    "percentile_5yr": 0.043
+  },
+  "NPVTBANK": {
+    "full_name": "NIFTY PRIVATE BANK",
+    "pct_change_1yr": 16.52,
+    "upside_from_low": 17.94,
+    "low_pct": -2.21,
+    "high_pct": 17.94,
+    "percentile_3yr": 0.103,
+    "percentile_4yr": 0.07,
+    "percentile_5yr": 0.148
+  },
+  "NMSITT": {
+    "full_name": "Nifty MidSmall IT & Telecom",
+    "pct_change_1yr": 14.63,
+    "upside_from_low": 20.78,
+    "low_pct": -5.5,
+    "high_pct": 20.78,
+    "percentile_3yr": 0.095,
+    "percentile_4yr": 0.391,
+    "percentile_5yr": 0.278
+  },
+  "NTECH": {
+    "full_name": "NIFTY IT",
+    "pct_change_1yr": -4.03,
+    "upside_from_low": 10.01,
+    "low_pct": -9.79,
+    "high_pct": 10.01,
+    "percentile_3yr": 0.048,
+    "percentile_4yr": 0.017,
+    "percentile_5yr": 0.017
+  },
+  "NFMCG": {
+    "full_name": "NIFTY FMCG",
+    "pct_change_1yr": 10.64,
+    "upside_from_low": 11.21,
+    "low_pct": -2.72,
+    "high_pct": 11.21,
+    "percentile_3yr": 0.032,
+    "percentile_4yr": 0.043,
+    "percentile_5yr": 0.104
+  },
+  "NMEDIA": {
+    "full_name": "NIFTY MEDIA",
+    "pct_change_1yr": 6.43,
+    "upside_from_low": 6.43,
+    "low_pct": -15.8,
+    "high_pct": 6.43,
+    "percentile_3yr": 0.008,
+    "percentile_4yr": 0.0,
+    "percentile_5yr": 0.0
+  },
+  "N200V30": {
+    "full_name": "Nifty200 Value 30",
+    "pct_change_1yr": 27.17,
+    "upside_from_low": 27.17,
+    "low_pct": -1.08,
+    "high_pct": 27.17,
+    "percentile_3yr": 0.944,
+    "percentile_4yr": 0.957,
+    "percentile_5yr": 0.948
+  },
+  "N500V50": {
+    "full_name": "NIFTY500 VALUE 50",
+    "pct_change_1yr": 24.8,
+    "upside_from_low": 24.8,
+    "low_pct": -1.13,
+    "high_pct": 24.8,
+    "percentile_3yr": 0.913,
+    "percentile_4yr": 0.922,
+    "percentile_5yr": 0.93
+  },
+  "NAQVLV30": {
+    "full_name": "NIFTY ALPHA QUALITY VALUE LOW-VOLATILITY 30",
+    "pct_change_1yr": 17.68,
+    "upside_from_low": 17.68,
+    "low_pct": -1.74,
+    "high_pct": 17.68,
+    "percentile_3yr": 0.762,
+    "percentile_4yr": 0.722,
+    "percentile_5yr": 0.765
+  },
+  "N500LV50": {
+    "full_name": "NIFTY500 LOW VOLATILITY 50",
+    "pct_change_1yr": 20.72,
+    "upside_from_low": 20.72,
+    "low_pct": -1.43,
+    "high_pct": 20.72,
+    "percentile_3yr": 0.754,
+    "percentile_4yr": 0.557,
+    "percentile_5yr": 0.626
+  },
+  "N500MQVLV50": {
+    "full_name": "NIFTY500 MULTIFACTOR MQVLv 50",
+    "pct_change_1yr": 21.77,
+    "upside_from_low": 21.77,
+    "low_pct": 0.0,
+    "high_pct": 21.77,
+    "percentile_3yr": 0.746,
+    "percentile_4yr": 0.791,
+    "percentile_5yr": 0.8
+  },
+  "NMC150M50": {
+    "full_name": "NIFTY Midcap150 Momentum 50",
+    "pct_change_1yr": 22.69,
+    "upside_from_low": 23.27,
+    "low_pct": -2.2,
+    "high_pct": 23.27,
+    "percentile_3yr": 0.73,
+    "percentile_4yr": 0.817,
+    "percentile_5yr": 0.835
+  },
+  "N100AL30": {
+    "full_name": "NIFTY100 ALPHA 30",
+    "pct_change_1yr": 18.89,
+    "upside_from_low": 19.12,
+    "low_pct": -3.29,
+    "high_pct": 19.12,
+    "percentile_3yr": 0.714,
+    "percentile_4yr": 0.539,
+    "percentile_5yr": 0.296
+  },
+  "NAQLV30": {
+    "full_name": "NIFTY ALPHA QUALITY LOW VOLATILITY 30",
+    "pct_change_1yr": 16.2,
+    "upside_from_low": 16.2,
+    "low_pct": -2.17,
+    "high_pct": 16.2,
+    "percentile_3yr": 0.683,
+    "percentile_4yr": 0.67,
+    "percentile_5yr": 0.73
+  },
+  "N200AL30": {
+    "full_name": "NIFTY200 ALPHA 30",
+    "pct_change_1yr": 21.96,
+    "upside_from_low": 22.33,
+    "low_pct": -1.89,
+    "high_pct": 22.33,
+    "percentile_3yr": 0.651,
+    "percentile_4yr": 0.835,
+    "percentile_5yr": 0.817
+  },
+  "N100EQWT": {
+    "full_name": "NIFTY 100 EQUAL WEIGHT",
+    "pct_change_1yr": 20.46,
+    "upside_from_low": 20.46,
+    "low_pct": -1.69,
+    "high_pct": 20.46,
+    "percentile_3yr": 0.627,
+    "percentile_4yr": 0.496,
+    "percentile_5yr": 0.443
+  },
+  "N500Q50": {
+    "full_name": "NIFTY500 QUALITY 50",
+    "pct_change_1yr": 20.71,
+    "upside_from_low": 20.71,
+    "low_pct": -3.94,
+    "high_pct": 20.71,
+    "percentile_3yr": 0.571,
+    "percentile_4yr": 0.548,
+    "percentile_5yr": 0.513
+  },
+  "N500MMCQ50": {
+    "full_name": "NIFTY500 MULTICAP MOMENTUM QUALITY 50",
+    "pct_change_1yr": 20.3,
+    "upside_from_low": 22.4,
+    "low_pct": -3.03,
+    "high_pct": 22.4,
+    "percentile_3yr": 0.556,
+    "percentile_4yr": 0.643,
+    "percentile_5yr": 0.591
+  },
+  "N5ARB": {
+    "full_name": "NIFTY ALPHA 50",
+    "pct_change_1yr": 20.64,
+    "upside_from_low": 20.64,
+    "low_pct": -4.61,
+    "high_pct": 20.64,
+    "percentile_3yr": 0.524,
+    "percentile_4yr": 0.774,
+    "percentile_5yr": 0.4
+  },
+  "NAL50": {
+    "full_name": "NIFTY ALPHA 50",
+    "pct_change_1yr": 20.64,
+    "upside_from_low": 20.64,
+    "low_pct": -4.61,
+    "high_pct": 20.64,
+    "percentile_3yr": 0.524,
+    "percentile_4yr": 0.774,
+    "percentile_5yr": 0.4
+  },
+  "N500M50": {
+    "full_name": "NIFTY500 MOMENTUM 50",
+    "pct_change_1yr": 20.28,
+    "upside_from_low": 22.78,
+    "low_pct": -2.31,
+    "high_pct": 22.78,
+    "percentile_3yr": 0.5,
+    "percentile_4yr": 0.678,
+    "percentile_5yr": 0.617
+  },
+  "N50EW": {
+    "full_name": "NIFTY50 EQUAL WEIGHT",
+    "pct_change_1yr": 19.24,
+    "upside_from_low": 19.24,
+    "low_pct": -1.99,
+    "high_pct": 19.24,
+    "percentile_3yr": 0.492,
+    "percentile_4yr": 0.409,
+    "percentile_5yr": 0.47
+  },
+  "N500EW": {
+    "full_name": "NIFTY500 EQUAL WEIGHT",
+    "pct_change_1yr": 22.81,
+    "upside_from_low": 22.81,
+    "low_pct": -2.3,
+    "high_pct": 22.81,
+    "percentile_3yr": 0.484,
+    "percentile_4yr": 0.626,
+    "percentile_5yr": 0.643
+  },
+  "N100LV30": {
+    "full_name": "NIFTY 100 LOW VOLATILITY 30",
+    "pct_change_1yr": 17.14,
+    "upside_from_low": 17.14,
+    "low_pct": -1.89,
+    "high_pct": 17.14,
+    "percentile_3yr": 0.437,
+    "percentile_4yr": 0.322,
+    "percentile_5yr": 0.313
+  },
+  "NLV50": {
+    "full_name": "NIFTY LOW VOLATILITY 50",
+    "pct_change_1yr": 15.15,
+    "upside_from_low": 15.15,
+    "low_pct": -1.93,
+    "high_pct": 15.15,
+    "percentile_3yr": 0.421,
+    "percentile_4yr": 0.357,
+    "percentile_5yr": 0.383
+  },
+  "NMSC400MQ100": {
+    "full_name": "Nifty MidSmallcap400 Momentum Quality 100",
+    "pct_change_1yr": 19.46,
+    "upside_from_low": 19.72,
+    "low_pct": -5.14,
+    "high_pct": 19.72,
+    "percentile_3yr": 0.397,
+    "percentile_4yr": 0.574,
+    "percentile_5yr": 0.6
+  },
+  "NDIVOP50": {
+    "full_name": "NIFTY DIVIDEND OPPORTUNITIES 50",
+    "pct_change_1yr": 12.4,
+    "upside_from_low": 13.04,
+    "low_pct": -1.3,
+    "high_pct": 13.04,
+    "percentile_3yr": 0.365,
+    "percentile_4yr": 0.365,
+    "percentile_5yr": 0.548
+  },
+  "N200M30": {
+    "full_name": "NIFTY200 MOMENTUM 30",
+    "pct_change_1yr": 17.91,
+    "upside_from_low": 21.33,
+    "low_pct": -1.49,
+    "high_pct": 21.33,
+    "percentile_3yr": 0.341,
+    "percentile_4yr": 0.513,
+    "percentile_5yr": 0.461
+  },
+  "NALV30": {
+    "full_name": "NIFTY ALPHA LOW VOLATILITY 30",
+    "pct_change_1yr": 13.47,
+    "upside_from_low": 13.47,
+    "low_pct": -1.8,
+    "high_pct": 13.47,
+    "percentile_3yr": 0.333,
+    "percentile_4yr": 0.339,
+    "percentile_5yr": 0.426
+  },
+  "NHBETA50": {
+    "full_name": "NIFTY HIGH BETA 50",
+    "pct_change_1yr": 30.26,
+    "upside_from_low": 30.26,
+    "low_pct": -1.8,
+    "high_pct": 30.26,
+    "percentile_3yr": 0.325,
+    "percentile_4yr": 0.6,
+    "percentile_5yr": 0.783
+  },
+  "NSC250Q50": {
+    "full_name": "Nifty Smallcap250 Quality 50",
+    "pct_change_1yr": 16.73,
+    "upside_from_low": 16.73,
+    "low_pct": -8.51,
+    "high_pct": 16.73,
+    "percentile_3yr": 0.262,
+    "percentile_4yr": 0.522,
+    "percentile_5yr": 0.583
+  },
+  "NTOP15EW": {
+    "full_name": "NIFTY TOP 15 EQUAL WEIGHT",
+    "pct_change_1yr": 17.95,
+    "upside_from_low": 17.95,
+    "low_pct": -1.88,
+    "high_pct": 17.95,
+    "percentile_3yr": 0.238,
+    "percentile_4yr": 0.157,
+    "percentile_5yr": 0.322
+  },
+  "N200Q30": {
+    "full_name": "NIFTY200 Quality 30",
+    "pct_change_1yr": 17.72,
+    "upside_from_low": 17.72,
+    "low_pct": -0.72,
+    "high_pct": 17.72,
+    "percentile_3yr": 0.23,
+    "percentile_4yr": 0.226,
+    "percentile_5yr": 0.235
+  },
+  "NTOP20EW": {
+    "full_name": "NIFTY TOP 20 EQUAL WEIGHT",
+    "pct_change_1yr": 15.92,
+    "upside_from_low": 15.92,
+    "low_pct": -1.9,
+    "high_pct": 15.92,
+    "percentile_3yr": 0.222,
+    "percentile_4yr": 0.174,
+    "percentile_5yr": 0.365
+  },
+  "N100Q30": {
+    "full_name": "NIFTY100 QUALITY 30",
+    "pct_change_1yr": 15.5,
+    "upside_from_low": 15.5,
+    "low_pct": -2.11,
+    "high_pct": 15.5,
+    "percentile_3yr": 0.214,
+    "percentile_4yr": 0.183,
+    "percentile_5yr": 0.261
+  },
+  "NMC150Q50": {
+    "full_name": "NIFTY Midcap150 Quality 50",
+    "pct_change_1yr": 18.4,
+    "upside_from_low": 18.9,
+    "low_pct": -3.22,
+    "high_pct": 18.9,
+    "percentile_3yr": 0.206,
+    "percentile_4yr": 0.235,
+    "percentile_5yr": 0.165
+  },
+  "N50V20": {
+    "full_name": "NIFTY50 VALUE 20",
+    "pct_change_1yr": 8.31,
+    "upside_from_low": 11.22,
+    "low_pct": -2.15,
+    "high_pct": 11.22,
+    "percentile_3yr": 0.19,
+    "percentile_4yr": 0.104,
+    "percentile_5yr": 0.217
+  },
+  "NQLV30": {
+    "full_name": "NIFTY QUALITY LOW VOLATILITY 30",
+    "pct_change_1yr": 14.53,
+    "upside_from_low": 14.53,
+    "low_pct": -1.76,
+    "high_pct": 14.53,
+    "percentile_3yr": 0.183,
+    "percentile_4yr": 0.139,
+    "percentile_5yr": 0.139
+  },
+  "NSC250MQ100": {
+    "full_name": "Nifty Smallcap250 Momentum Quality 100",
+    "pct_change_1yr": 17.4,
+    "upside_from_low": 17.4,
+    "low_pct": -6.75,
+    "high_pct": 17.4,
+    "percentile_3yr": 0.159,
+    "percentile_4yr": 0.417,
+    "percentile_5yr": 0.452
+  },
+  "NGROW15": {
+    "full_name": "NIFTY GROWTH SECTORS 15",
+    "pct_change_1yr": 15.03,
+    "upside_from_low": 20.18,
+    "low_pct": -2.38,
+    "high_pct": 20.18,
+    "percentile_3yr": 0.119,
+    "percentile_4yr": 0.078,
+    "percentile_5yr": 0.252
+  },
+  "NTOP10EW": {
+    "full_name": "NIFTY TOP 10 EQUAL WEIGHT",
+    "pct_change_1yr": 11.64,
+    "upside_from_low": 11.64,
+    "low_pct": -3.45,
+    "high_pct": 11.64,
+    "percentile_3yr": 0.087,
+    "percentile_4yr": 0.061,
+    "percentile_5yr": 0.096
+  },
+  "N500FCQT30": {
+    "full_name": "Nifty500 Flexicap Quality 30",
+    "pct_change_1yr": 11.32,
+    "upside_from_low": 14.45,
+    "low_pct": -1.74,
+    "high_pct": 14.45,
+    "percentile_3yr": 0.056,
+    "percentile_4yr": 0.113,
+    "percentile_5yr": 0.209
+  },
+  "NCM": {
+    "full_name": "Nifty Capital Markets",
+    "pct_change_1yr": 53.96,
+    "upside_from_low": 59.27,
+    "low_pct": -2.17,
+    "high_pct": 59.27,
+    "percentile_3yr": 1.0,
+    "percentile_4yr": 1.0,
+    "percentile_5yr": 0.991
+  },
+  "NIDEF": {
+    "full_name": "Nifty India Defence",
+    "pct_change_1yr": 51.71,
+    "upside_from_low": 51.71,
+    "low_pct": -10.9,
+    "high_pct": 51.71,
+    "percentile_3yr": 0.992,
+    "percentile_4yr": 0.991,
+    "percentile_5yr": 1.0
+  },
+  "NMAHIN": {
+    "full_name": "NIFTY INDIA CORPORATE GROUP INDEX - MAHINDRA GROUP",
+    "pct_change_1yr": 27.53,
+    "upside_from_low": 36.86,
+    "low_pct": -1.27,
+    "high_pct": 36.86,
+    "percentile_3yr": 0.96,
+    "percentile_4yr": 0.861,
+    "percentile_5yr": 0.913
+  },
+  "NMIDLIQ15": {
+    "full_name": "NIFTY MIDCAP LIQUID 15",
+    "pct_change_1yr": 31.45,
+    "upside_from_low": 33.59,
+    "low_pct": -0.71,
+    "high_pct": 33.59,
+    "percentile_3yr": 0.937,
+    "percentile_4yr": 0.887,
+    "percentile_5yr": 0.87
+  },
+  "NCPSE": {
+    "full_name": "NIFTY CPSE",
+    "pct_change_1yr": 18.95,
+    "upside_from_low": 18.95,
+    "low_pct": -2.38,
+    "high_pct": 18.95,
+    "percentile_3yr": 0.929,
+    "percentile_4yr": 0.983,
+    "percentile_5yr": 0.939
+  },
+  "NPSE": {
+    "full_name": "NIFTY PSE",
+    "pct_change_1yr": 21.08,
+    "upside_from_low": 21.08,
+    "low_pct": -1.59,
+    "high_pct": 21.08,
+    "percentile_3yr": 0.921,
+    "percentile_4yr": 0.965,
+    "percentile_5yr": 0.922
+  },
+  "NMOBIL": {
+    "full_name": "Nifty Mobility",
+    "pct_change_1yr": 30.92,
+    "upside_from_low": 31.09,
+    "low_pct": -2.12,
+    "high_pct": 31.09,
+    "percentile_3yr": 0.905,
+    "percentile_4yr": 0.878,
+    "percentile_5yr": 0.861
+  },
+  "NTRANS": {
+    "full_name": "Nifty Transportation & Logistics",
+    "pct_change_1yr": 31.49,
+    "upside_from_low": 33.55,
+    "low_pct": -2.93,
+    "high_pct": 33.55,
+    "percentile_3yr": 0.873,
+    "percentile_4yr": 0.87,
+    "percentile_5yr": 0.887
+  },
+  "NNACON": {
+    "full_name": "NIFTY INDIA NEW AGE CONSUMPTION",
+    "pct_change_1yr": 21.18,
+    "upside_from_low": 21.39,
+    "low_pct": -3.35,
+    "high_pct": 21.39,
+    "percentile_3yr": 0.865,
+    "percentile_4yr": 0.826,
+    "percentile_5yr": 0.748
+  },
+  "NIMFG": {
+    "full_name": "Nifty India Manufacturing",
+    "pct_change_1yr": 25.38,
+    "upside_from_low": 26.34,
+    "low_pct": -0.75,
+    "high_pct": 26.34,
+    "percentile_3yr": 0.849,
+    "percentile_4yr": 0.696,
+    "percentile_5yr": 0.713
+  },
+  "NSMEE": {
+    "full_name": "NIFTY SME EMERGE",
+    "pct_change_1yr": 25.37,
+    "upside_from_low": 29.24,
+    "low_pct": -1.42,
+    "high_pct": 29.24,
+    "percentile_3yr": 0.833,
+    "percentile_4yr": 0.913,
+    "percentile_5yr": 0.974
+  },
+  "NMFG532": {
+    "full_name": "NIFTY500 MULTICAP INDIA MANUFATURING 50:30:20",
+    "pct_change_1yr": 23.58,
+    "upside_from_low": 24.76,
+    "low_pct": -0.88,
+    "high_pct": 24.76,
+    "percentile_3yr": 0.81,
+    "percentile_4yr": 0.652,
+    "percentile_5yr": 0.722
+  },
+  "NREiT": {
+    "full_name": "Nifty REITs & InvITs",
+    "pct_change_1yr": 25.18,
+    "upside_from_low": 27.44,
+    "low_pct": -0.03,
+    "high_pct": 27.44,
+    "percentile_3yr": 0.778,
+    "percentile_4yr": 0.217,
+    "percentile_5yr": 0.052
+  },
+  "NINFRA": {
+    "full_name": "NIFTY INFRASTRUCTURE",
+    "pct_change_1yr": 23.23,
+    "upside_from_low": 23.23,
+    "low_pct": -2.39,
+    "high_pct": 23.23,
+    "percentile_3yr": 0.77,
+    "percentile_4yr": 0.704,
+    "percentile_5yr": 0.661
+  },
+  "NINFRA532": {
+    "full_name": "NIFTY500 MULTICAP INFRASTRUCTURE 50:30:20",
+    "pct_change_1yr": 22.64,
+    "upside_from_low": 22.64,
+    "low_pct": -2.23,
+    "high_pct": 22.64,
+    "percentile_3yr": 0.667,
+    "percentile_4yr": 0.609,
+    "percentile_5yr": 0.704
+  },
+  "NMSICON": {
+    "full_name": "Nifty MidSmall India Consumption",
+    "pct_change_1yr": 12.63,
+    "upside_from_low": 12.87,
+    "low_pct": -3.56,
+    "high_pct": 12.87,
+    "percentile_3yr": 0.659,
+    "percentile_4yr": 0.661,
+    "percentile_5yr": 0.635
+  },
+  "NCOMM": {
+    "full_name": "NIFTY COMMODITIES",
+    "pct_change_1yr": 21.93,
+    "upside_from_low": 21.93,
+    "low_pct": -2.06,
+    "high_pct": 21.93,
+    "percentile_3yr": 0.611,
+    "percentile_4yr": 0.461,
+    "percentile_5yr": 0.435
+  },
+  "NICON": {
+    "full_name": "NIFTY INDIA CONSUMPTION",
+    "pct_change_1yr": 21.28,
+    "upside_from_low": 21.28,
+    "low_pct": -3.23,
+    "high_pct": 21.28,
+    "percentile_3yr": 0.603,
+    "percentile_4yr": 0.435,
+    "percentile_5yr": 0.504
+  },
+  "NIDIGI": {
+    "full_name": "Nifty India Digital",
+    "pct_change_1yr": 15.38,
+    "upside_from_low": 21.22,
+    "low_pct": -2.22,
+    "high_pct": 21.22,
+    "percentile_3yr": 0.595,
+    "percentile_4yr": 0.565,
+    "percentile_5yr": 0.357
+  },
+  "NEVNAA": {
+    "full_name": "Nifty EV & New Age Automotive",
+    "pct_change_1yr": 22.61,
+    "upside_from_low": 27.02,
+    "low_pct": -3.58,
+    "high_pct": 27.02,
+    "percentile_3yr": 0.579,
+    "percentile_4yr": 0.53,
+    "percentile_5yr": 0.739
+  },
+  "NLCLIQ15": {
+    "full_name": "NIFTY100 LIQUID 15",
+    "pct_change_1yr": 23.6,
+    "upside_from_low": 23.6,
+    "low_pct": -1.99,
+    "high_pct": 23.6,
+    "percentile_3yr": 0.563,
+    "percentile_4yr": 0.452,
+    "percentile_5yr": 0.487
+  },
+  "N5CORP": {
+    "full_name": "NIFTY INDIA SELECT 5 CORPORATE GROUPS (MAATR)",
+    "pct_change_1yr": 21.27,
+    "upside_from_low": 21.99,
+    "low_pct": -2.05,
+    "high_pct": 21.99,
+    "percentile_3yr": 0.476,
+    "percentile_4yr": 0.304,
+    "percentile_5yr": 0.226
+  },
+  "NRURAL": {
+    "full_name": "Nifty Rural",
+    "pct_change_1yr": 23.64,
+    "upside_from_low": 23.64,
+    "low_pct": -1.06,
+    "high_pct": 23.64,
+    "percentile_3yr": 0.46,
+    "percentile_4yr": 0.426,
+    "percentile_5yr": 0.539
+  },
+  "NBIRLA": {
+    "full_name": "NIFTY INDIA CORPORATE GROUP INDEX - ADITYA BIRLA GROUP",
+    "pct_change_1yr": 21.96,
+    "upside_from_low": 21.96,
+    "low_pct": -3.42,
+    "high_pct": 21.96,
+    "percentile_3yr": 0.444,
+    "percentile_4yr": 0.383,
+    "percentile_5yr": 0.53
+  },
+  "NMNC": {
+    "full_name": "NIFTY MNC",
+    "pct_change_1yr": 22.13,
+    "upside_from_low": 22.13,
+    "low_pct": -1.09,
+    "high_pct": 22.13,
+    "percentile_3yr": 0.429,
+    "percentile_4yr": 0.296,
+    "percentile_5yr": 0.374
+  },
+  "NTOUR": {
+    "full_name": "NIFTY INDIA TOURISM",
+    "pct_change_1yr": 9.46,
+    "upside_from_low": 9.46,
+    "low_pct": -7.63,
+    "high_pct": 9.46,
+    "percentile_3yr": 0.405,
+    "percentile_4yr": 0.504,
+    "percentile_5yr": 0.565
+  },
+  "N100ESG": {
+    "full_name": "NIFTY100 ESG",
+    "pct_change_1yr": 18.28,
+    "upside_from_low": 18.28,
+    "low_pct": -1.45,
+    "high_pct": 18.28,
+    "percentile_3yr": 0.357,
+    "percentile_4yr": 0.27,
+    "percentile_5yr": 0.2
+  },
+  "N100ESGE": {
+    "full_name": "NIFTY100 Enhanced ESG",
+    "pct_change_1yr": 18.29,
+    "upside_from_low": 18.29,
+    "low_pct": -1.45,
+    "high_pct": 18.29,
+    "percentile_3yr": 0.349,
+    "percentile_4yr": 0.261,
+    "percentile_5yr": 0.191
+  },
+  "NRAIL": {
+    "full_name": "Nifty India Railways PSU",
+    "pct_change_1yr": 9.58,
+    "upside_from_low": 9.58,
+    "low_pct": -14.44,
+    "high_pct": 9.58,
+    "percentile_3yr": 0.317,
+    "percentile_4yr": 0.93,
+    "percentile_5yr": 0.957
+  },
+  "N100ESGSL": {
+    "full_name": "Nifty100 ESG Sector Leaders",
+    "pct_change_1yr": 17.69,
+    "upside_from_low": 17.69,
+    "low_pct": -1.84,
+    "high_pct": 17.69,
+    "percentile_3yr": 0.302,
+    "percentile_4yr": 0.191,
+    "percentile_5yr": 0.174
+  },
+  "NSERVSEC": {
+    "full_name": "NIFTY SERVICES SECTOR",
+    "pct_change_1yr": 13.94,
+    "upside_from_low": 14.01,
+    "low_pct": -1.85,
+    "high_pct": 14.01,
+    "percentile_3yr": 0.294,
+    "percentile_4yr": 0.122,
+    "percentile_5yr": 0.113
+  },
+  "NENERGY": {
+    "full_name": "NIFTY ENERGY",
+    "pct_change_1yr": 19.77,
+    "upside_from_low": 19.77,
+    "low_pct": -1.29,
+    "high_pct": 19.77,
+    "percentile_3yr": 0.286,
+    "percentile_4yr": 0.374,
+    "percentile_5yr": 0.07
+  },
+  "NHOUSING": {
+    "full_name": "Nifty Housing",
+    "pct_change_1yr": 18.26,
+    "upside_from_low": 18.26,
+    "low_pct": -2.41,
+    "high_pct": 18.26,
+    "percentile_3yr": 0.278,
+    "percentile_4yr": 0.278,
+    "percentile_5yr": 0.33
+  },
+  "NNCCON": {
+    "full_name": "Nifty Non-Cyclical Consumer Index",
+    "pct_change_1yr": 14.58,
+    "upside_from_low": 14.58,
+    "low_pct": -3.69,
+    "high_pct": 14.58,
+    "percentile_3yr": 0.27,
+    "percentile_4yr": 0.313,
+    "percentile_5yr": 0.339
+  },
+  "NCHOUS": {
+    "full_name": "Nifty Core Housing",
+    "pct_change_1yr": 13.56,
+    "upside_from_low": 13.56,
+    "low_pct": -4.51,
+    "high_pct": 13.56,
+    "percentile_3yr": 0.175,
+    "percentile_4yr": 0.252,
+    "percentile_5yr": 0.27
+  },
+  "N500SH": {
+    "full_name": "NIFTY500 SHARIAH",
+    "pct_change_1yr": 13.4,
+    "upside_from_low": 13.78,
+    "low_pct": -2.6,
+    "high_pct": 13.78,
+    "percentile_3yr": 0.151,
+    "percentile_4yr": 0.13,
+    "percentile_5yr": 0.087
+  },
+  "NSH25": {
+    "full_name": "NIFTY SHARIAH 25",
+    "pct_change_1yr": 11.42,
+    "upside_from_low": 12.37,
+    "low_pct": -2.43,
+    "high_pct": 12.37,
+    "percentile_3yr": 0.143,
+    "percentile_4yr": 0.087,
+    "percentile_5yr": 0.061
+  },
+  "NIPO": {
+    "full_name": "NIFTY IPO",
+    "pct_change_1yr": 21.93,
+    "upside_from_low": 23.67,
+    "low_pct": -6.72,
+    "high_pct": 23.67,
+    "percentile_3yr": 0.111,
+    "percentile_4yr": 0.4,
+    "percentile_5yr": 0.078
+  },
+  "NTATA25": {
+    "full_name": "NIFTY INDIA CORPORATE GROUP INDEX - TATA GROUP 25% CAP",
+    "pct_change_1yr": 5.33,
+    "upside_from_low": 9.31,
+    "low_pct": -5.93,
+    "high_pct": 9.31,
+    "percentile_3yr": 0.079,
+    "percentile_4yr": 0.148,
+    "percentile_5yr": 0.13
+  },
+  "N50SH": {
+    "full_name": "NIFTY50 SHARIAH",
+    "pct_change_1yr": 6.53,
+    "upside_from_low": 7.09,
+    "low_pct": -3.23,
+    "high_pct": 7.09,
+    "percentile_3yr": 0.04,
+    "percentile_4yr": 0.035,
+    "percentile_5yr": 0.026
+  },
+  "NTATA": {
+    "full_name": "NIFTY INDIA CORPORATE GROUP INDEX - TATA GROUP",
+    "pct_change_1yr": 0.43,
+    "upside_from_low": 5.02,
+    "low_pct": -7.1,
+    "high_pct": 5.02,
+    "percentile_3yr": 0.024,
+    "percentile_4yr": 0.026,
+    "percentile_5yr": 0.035
+  },
+  "NWAVES": {
+    "full_name": "Nifty Waves",
+    "pct_change_1yr": 3.54,
+    "upside_from_low": 4.46,
+    "low_pct": -14.62,
+    "high_pct": 4.46,
+    "percentile_3yr": 0.016,
+    "percentile_4yr": 0.009,
+    "percentile_5yr": 0.009
+  }
+}

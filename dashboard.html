@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Indices Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f8f9fa; padding: 30px; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 20px; }
+        .category-section { background: #fff; border: 1px solid #dee2e6; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+        .indices-table { width: 100%; border-collapse: collapse; }
+        .indices-table thead { background: #000080; color: white; }
+        .indices-table th { padding: 12px 10px; text-align: left; font-weight: 600; font-size: 0.95em; cursor: pointer; }
+        .indices-table th:last-child { text-align: center; }
+        .indices-table tbody tr { border-bottom: 1px solid #e9ecef; transition: background-color 0.2s ease; cursor: pointer; }
+        .indices-table tbody tr:hover { background: #f8f9fa; }
+        .indices-table tbody tr.selected { background: #e7f3ff !important; }
+        .indices-table td { padding: 10px; font-size: 0.95em; }
+        .index-code { font-weight: 600; color: #212529; font-size: 1em; }
+        .value-cell { text-align: center; font-weight: 700; font-size: 1em; padding: 8px 10px; border-radius: 4px; }
+        .very-low { background: #00ff00; color: #000; }
+        .low { background: #90ee90; color: #000; }
+        .medium { background: #ffff00; color: #000; }
+        .high { background: #ff6b35; color: white; }
+        .very-high { background: #ff0000; color: white; }
+        .selected-section { margin-top: 30px; display: none; }
+        .selected-header { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 1px solid #dee2e6; }
+        .selected-title { font-size: 1.3em; font-weight: 600; margin-bottom: 15px; }
+        .selected-list { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
+        .selected-tag { background: #e9ecef; padding: 8px 15px; border-radius: 20px; font-size: 0.9em; display: flex; gap: 8px; }
+        .remove-tag { cursor: pointer; color: #dc3545; font-weight: bold; }
+        .correlation-btn { background: #000080; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-size: 1em; font-weight: 600; cursor: pointer; }
+        .correlation-btn:hover { background: #000066; }
+        .correlation-btn:disabled { background: #6c757d; cursor: not-allowed; }
+        .basket-table, .correlation-table { background: #fff; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.08); border: 1px solid #dee2e6; }
+        .basket-table h3, .correlation-table h3 { font-size: 1.2em; font-weight: 600; margin-bottom: 15px; text-align: center; }
+        .basket-data-table { width: 100%; border-collapse: collapse; }
+        .basket-data-table th { background: #000080; color: white; padding: 12px; text-align: center; font-weight: 600; border: 1px solid #000066; }
+        .basket-data-table td { padding: 10px; text-align: center; border: 1px solid #dee2e6; font-weight: 500; }
+        .correlation-table { display: none; }
+        .legend { background: #fff; padding: 15px; border: 1px solid #dee2e6; border-radius: 8px; margin-top: 25px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.08); }
+        .legend-items { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 8px; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.85em; }
+        .legend-color { width: 40px; height: 18px; border-radius: 3px; border: 1px solid rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="categories-grid" id="categoriesContainer"></div>
+        <div class="selected-section" id="selectedSection">
+            <div class="selected-header">
+                <div class="selected-title">Selected Indices Basket</div>
+                <div class="selected-list" id="selectedList"></div>
+                <button class="correlation-btn" id="correlationBtn" disabled>Correlation</button>
+            </div>
+            <div class="basket-table" id="basketTable" style="display:none;">
+                <h3>Sector Basket</h3>
+                <table class="basket-data-table"><thead><tr><th>Indices</th><th>values</th><th>%</th><th>Up</th><th>risk</th><th>Low</th><th>High</th><th>Del</th></tr></thead><tbody id="basketTableBody"></tbody></table>
+            </div>
+            <div class="correlation-table" id="correlationTable">
+                <h3>Correlation</h3>
+                <table class="basket-data-table" id="correlationDataTable"></table>
+            </div>
+        </div>
+        <div class="legend">
+            <div class="legend-items">
+                <div class="legend-item"><div class="legend-color very-high"></div><span>0.8-1.0</span></div>
+                <div class="legend-item"><div class="legend-color high"></div><span>0.6-0.8</span></div>
+                <div class="legend-item"><div class="legend-color medium"></div><span>0.4-0.6</span></div>
+                <div class="legend-item"><div class="legend-color low"></div><span>0.2-0.4</span></div>
+                <div class="legend-item"><div class="legend-color very-low"></div><span>0.0-0.2</span></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let allData = {};
+        let selectedIndices = [];
+        let basketData = {};
+        let correlationMatrix = {};
+
+        async function loadData() {
+            try {
+                // Load categorized indices with updated percentiles (with cache busting)
+                const timestamp = new Date().getTime();
+                const response = await fetch(`categorized_indices_updated.csv?v=${timestamp}`);
+                const text = await response.text();
+                const lines = text.trim().split('\n');
+                const data = { 'Broad': [], 'Sector': [], 'Strategy': [], 'Thematic': [] };
+
+                for (let i = 1; i < lines.length; i++) {
+                    const values = lines[i].split(',');
+                    if (data[values[0]]) {
+                        data[values[0]].push({
+                            shortName: values[1],
+                            fullName: values[2],
+                            percentile_3yr: parseFloat(values[3]),
+                            profit_3yr: parseFloat(values[4]),
+                            percentile_4yr: parseFloat(values[5]),
+                            profit_4yr: parseFloat(values[6]),
+                            percentile_5yr: parseFloat(values[7]),
+                            profit_5yr: parseFloat(values[8])
+                        });
+                    }
+                }
+
+                allData = data;
+
+                // Load basket data
+                const basketResponse = await fetch(`basket_data.json?v=${timestamp}`);
+                basketData = await basketResponse.json();
+                console.log('Basket data loaded:', Object.keys(basketData).length, 'indices');
+                console.log('Sample basket data:', basketData['NREALTY']);
+
+                // Load correlation matrix
+                const corrResponse = await fetch(`correlation_matrix.json?v=${timestamp}`);
+                correlationMatrix = await corrResponse.json();
+
+                displayData();
+            } catch (error) {
+                console.error('Error loading data:', error);
+            }
+        }
+
+        function getColorClass(value) {
+            if (value < 0.2) return 'very-low';
+            if (value < 0.4) return 'low';
+            if (value < 0.6) return 'medium';
+            if (value < 0.8) return 'high';
+            return 'very-high';
+        }
+
+        function toggleSelection(shortName, fullName, percentile5yr, profit5yr, percentile4yr, profit4yr, percentile3yr, profit3yr) {
+            const index = selectedIndices.findIndex(item => item.shortName === shortName);
+            if (index > -1) {
+                selectedIndices.splice(index, 1);
+            } else {
+                selectedIndices.push({ 
+                    shortName, fullName, 
+                    percentile_5yr: percentile5yr, profit_5yr: profit5yr,
+                    percentile_4yr: percentile4yr, profit_4yr: profit4yr,
+                    percentile_3yr: percentile3yr, profit_3yr: profit3yr
+                });
+            }
+            updateSelected();
+            displayData();
+        }
+
+        function updateSelected() {
+            const section = document.getElementById('selectedSection');
+            const list = document.getElementById('selectedList');
+            const btn = document.getElementById('correlationBtn');
+
+            if (selectedIndices.length > 0) {
+                section.style.display = 'block';
+                list.innerHTML = '';
+
+                selectedIndices.forEach(item => {
+                    const tag = document.createElement('div');
+                    tag.className = 'selected-tag';
+                    tag.innerHTML = `<span>${item.shortName}</span><span class="remove-tag">×</span>`;
+                    
+                    const removeBtn = tag.querySelector('.remove-tag');
+                    removeBtn.addEventListener('click', function() {
+                        toggleSelection(item.shortName, item.fullName, item.percentile_5yr, item.profit_5yr, item.percentile_4yr, item.profit_4yr, item.percentile_3yr, item.profit_3yr);
+                    });
+                    
+                    list.appendChild(tag);
+                });
+
+                btn.disabled = selectedIndices.length < 2;
+                updateBasket();
+                document.getElementById('basketTable').style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+
+        function updateBasket() {
+            const tbody = document.getElementById('basketTableBody');
+            tbody.innerHTML = '';
+
+            selectedIndices.forEach(item => {
+                const row = document.createElement('tr');
+                const colorClass = getColorClass(item.percentile_5yr);
+                
+                // Get real data from basketData
+                const realData = basketData[item.shortName];
+                
+                if (!realData) {
+                    console.warn(`No basket data for ${item.shortName}`);
+                    return;
+                }
+
+                row.innerHTML = `
+                    <td style="font-weight:600;">${item.shortName}</td>
+                    <td><div class="value-cell ${colorClass}" style="display:inline-block;padding:4px 12px;">${item.percentile_5yr.toFixed(2)}</div></td>
+                    <td>${realData.pct_change_1yr}%</td>
+                    <td>${realData.upside_from_low}%</td>
+                    <td><div class="value-cell ${colorClass}" style="display:inline-block;padding:4px 12px;">${item.percentile_4yr.toFixed(2)}</div></td>
+                    <td>${realData.low_pct}%</td>
+                    <td>${realData.high_pct}%</td>
+                    <td><button class="delete-btn">-</button></td>
+                `;
+
+                const deleteBtn = row.querySelector('.delete-btn');
+                deleteBtn.style.cssText = 'background:#dc3545;color:white;border:none;padding:4px 8px;border-radius:4px;cursor:pointer;';
+                deleteBtn.addEventListener('click', function() {
+                    toggleSelection(item.shortName, item.fullName, item.percentile_5yr, item.profit_5yr, item.percentile_4yr, item.profit_4yr, item.percentile_3yr, item.profit_3yr);
+                });
+
+                tbody.appendChild(row);
+            });
+        }
+
+        function displayData() {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
+
+            const titles = { 'Broad': 'Broad', 'Sector': 'Sector', 'Strategy': 'Strategy', 'Thematic': 'Thematic' };
+
+            ['Broad', 'Sector', 'Strategy', 'Thematic'].forEach(category => {
+                const section = document.createElement('div');
+                section.className = 'category-section';
+                section.innerHTML = `
+                    <table class="indices-table">
+                        <thead>
+                            <tr>
+                                <th>${titles[category]}</th>
+                                <th class="sortable-header">Values ↕</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                `;
+
+                const tbody = section.querySelector('tbody');
+                const sortHeader = section.querySelector('.sortable-header');
+                
+                // Track sort state for this category
+                let sortAscending = false;
+                
+                // Add click handler for sorting
+                sortHeader.addEventListener('click', function() {
+                    sortAscending = !sortAscending;
+                    
+                    // Sort the data by 5-year percentile
+                    const sortedData = [...allData[category]].sort((a, b) => {
+                        return sortAscending ? 
+                            a.percentile_5yr - b.percentile_5yr : 
+                            b.percentile_5yr - a.percentile_5yr;
+                    });
+                    
+                    // Update arrow indicator
+                    sortHeader.textContent = sortAscending ? 'Values ↑' : 'Values ↓';
+                    
+                    // Clear and repopulate tbody
+                    tbody.innerHTML = '';
+                    sortedData.forEach(index => {
+                        const row = document.createElement('tr');
+                        const colorClass = getColorClass(index.percentile_5yr);
+                        const isSelected = selectedIndices.some(item => item.shortName === index.shortName);
+
+                        if (isSelected) {
+                            row.classList.add('selected');
+                        }
+
+                        row.innerHTML = `
+                            <td class="index-code">${index.shortName}</td>
+                            <td><div class="value-cell ${colorClass}">${index.percentile_5yr.toFixed(2)}</div></td>
+                        `;
+
+                        row.title = `${index.fullName}\n5-Year: ${index.profit_5yr > 0 ? '+' : ''}${index.profit_5yr.toFixed(1)}% (Percentile: ${index.percentile_5yr.toFixed(3)})\n4-Year: ${index.profit_4yr > 0 ? '+' : ''}${index.profit_4yr.toFixed(1)}% (Percentile: ${index.percentile_4yr.toFixed(3)})\n3-Year: ${index.profit_3yr > 0 ? '+' : ''}${index.profit_3yr.toFixed(1)}% (Percentile: ${index.percentile_3yr.toFixed(3)})`;
+
+                        row.addEventListener('click', function() {
+                            toggleSelection(index.shortName, index.fullName, index.percentile_5yr, index.profit_5yr, index.percentile_4yr, index.profit_4yr, index.percentile_3yr, index.profit_3yr);
+                        });
+
+                        tbody.appendChild(row);
+                    });
+                });
+
+                allData[category].forEach(index => {
+                    const row = document.createElement('tr');
+                    const colorClass = getColorClass(index.percentile_5yr);
+                    const isSelected = selectedIndices.some(item => item.shortName === index.shortName);
+
+                    if (isSelected) {
+                        row.classList.add('selected');
+                    }
+
+                    row.innerHTML = `
+                        <td class="index-code">${index.shortName}</td>
+                        <td><div class="value-cell ${colorClass}">${index.percentile_5yr.toFixed(2)}</div></td>
+                    `;
+
+                    row.title = `${index.fullName}\n5-Year: ${index.profit_5yr > 0 ? '+' : ''}${index.profit_5yr.toFixed(1)}% (Percentile: ${index.percentile_5yr.toFixed(3)})\n4-Year: ${index.profit_4yr > 0 ? '+' : ''}${index.profit_4yr.toFixed(1)}% (Percentile: ${index.percentile_4yr.toFixed(3)})\n3-Year: ${index.profit_3yr > 0 ? '+' : ''}${index.profit_3yr.toFixed(1)}% (Percentile: ${index.percentile_3yr.toFixed(3)})`;
+
+                    row.addEventListener('click', function() {
+                        toggleSelection(index.shortName, index.fullName, index.percentile_5yr, index.profit_5yr, index.percentile_4yr, index.profit_4yr, index.percentile_3yr, index.profit_3yr);
+                    });
+
+                    tbody.appendChild(row);
+                });
+
+                container.appendChild(section);
+            });
+        }
+
+        document.getElementById('correlationBtn').addEventListener('click', function() {
+            const corrTable = document.getElementById('correlationTable');
+            const dataTable = document.getElementById('correlationDataTable');
+            corrTable.style.display = 'block';
+
+            let html = '<thead><tr><th></th>';
+            selectedIndices.forEach(item => html += `<th>${item.shortName}</th>`);
+            html += '</tr></thead><tbody>';
+
+            selectedIndices.forEach((item1, x) => {
+                html += `<tr><th style="background:#000080;color:white;">${item1.shortName}</th>`;
+                selectedIndices.forEach((item2, y) => {
+                    if (x === y) {
+                        html += '<td style="background:#ff0000;color:white;font-weight:bold;">1.00</td>';
+                    } else {
+                        // Get real correlation value
+                        let corr = 0.0;
+                        if (correlationMatrix[item1.shortName] && correlationMatrix[item1.shortName][item2.shortName] !== undefined) {
+                            corr = correlationMatrix[item1.shortName][item2.shortName];
+                        } else if (correlationMatrix[item2.shortName] && correlationMatrix[item2.shortName][item1.shortName] !== undefined) {
+                            corr = correlationMatrix[item2.shortName][item1.shortName];
+                        }
+                        
+                        const corrStr = corr.toFixed(2);
+                        // Color based on correlation strength
+                        let bg, color;
+                        if (corr >= 0.7) {
+                            bg = '#ff0000'; color = 'white';  // High positive correlation - red
+                        } else if (corr >= 0.5) {
+                            bg = '#ff6b35'; color = 'white';  // Medium-high - orange
+                        } else if (corr >= 0.3) {
+                            bg = '#ffff00'; color = '#000';   // Medium - yellow
+                        } else if (corr >= 0.1) {
+                            bg = '#90ee90'; color = '#000';   // Low - light green
+                        } else {
+                            bg = '#00ff00'; color = '#000';   // Very low - green
+                        }
+                        html += `<td style="background:${bg};color:${color};font-weight:bold;">${corrStr}</td>`;
+                    }
+                });
+                html += '</tr>';
+            });
+
+            html += '</tbody>';
+            dataTable.innerHTML = html;
+            corrTable.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        loadData();
+    </script>
+</body>
+</html>

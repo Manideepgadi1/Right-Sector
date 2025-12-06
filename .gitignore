@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific - test files
+test_*.py
+analyze_sample_formula.py
+comprehensive_test.py
+deep_analysis.py
+final_formula_test.py
+find_formula.py
+FORMULA_FINDINGS.md
+index.html
+index_categorized.html
+index_profit.html
+test_data_load.html
+
+# Temporary/analysis files
+stochastic_analysis_all_indices.csv
+profit_percentile_results.csv
+
+# Keep these important files (explicitly listed for clarity):
+# - dashboard.html (main application)
+# - categorized_indices_updated.csv (final data)
+# - basket_data.json (final data)
+# - correlation_matrix.json (final data)
+# - Latest_Indices_rawdata_14112025.csv (source data)
+# - calculate_4yr_5yr_percentiles.py (production script)
+# - calculate_basket_data.py (production script)
+# - calculate_correlations.py (production script)
+# - merge_percentiles.py (production script)
